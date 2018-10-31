@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>FaceX</title>
+
+    
+      <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600' rel='stylesheet' type='text/css'>
+      <link href="/css/toolkit-startup.css" rel="stylesheet">
+      <link href="/css/application-startup.css" rel="stylesheet">
+      <link rel = "stylesheet" type="text/css" href="/css/style.css">
+      <link rel = "stylesheet" type="text/css" href="/css/component.css">
+
+      <!-- axios -->
+      <script language="javascript" type="text/javascript" src="/js/axios.min.js"></script>
+
+  
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      /* …curses ios, etc… */
+      @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+        body {
+          width: 1px;
+          min-width: 100%;
+          *width: 100%;
+        }
+        #stage {
+          height: 1px;
+          overflow: auto;
+          min-height: 100vh;
+          -webkit-overflow-scrolling: touch;
+        }
+      }
+    </style>
+  </head>
+
+
+<body>
+
+  <div class="block block-inverse block-fill-height submission_page" >
+    <div class = 'btn_cancel'></div>
+    <section class="submission">
+      <h4>SUBMISSION</h4>
+
+      <span class="input input--hoshi"> 
+        <input class="input__field input__field--hoshi" type="text" id="input-name"/>
+        <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-name">
+          <span class="input__label-content input__label-content--hoshi">Please fill in your name.</span>
+        </label>
+      </span>
+
+      <span class="input input--hoshi">
+        <input class="input__field input__field--hoshi" type="text" id="input-com" />
+        <label class="input__label input__label--hoshi input__label--hoshi-color-2" for="input-com">
+          <span class="input__label-content input__label-content--hoshi">Please fill in your company.</span>
+        </label>
+      </span>
+
+
+      <span class="input input--hoshi">
+        <input class="input__field input__field--hoshi" type="text" id="input-tel" />
+        <label class="input__label input__label--hoshi input__label--hoshi-color-2" for="input-tel">
+          <span class="input__label-content input__label-content--hoshi">Please fill in your telephone number.</span>
+        </label>
+      </span>
+      <span class="input input--hoshi">
+        <input class="input__field input__field--hoshi" type="text" id="input-email" />
+        <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="input-email">
+          <span class="input__label-content input__label-content--hoshi">Please fill in your email.</span>
+        </label>
+      </span>
+      <span class="input input--hoshi">
+        <input class="input__field input__field--hoshi" type="text" id="input-goal" />
+        <label class="input__label input__label--hoshi input__label--hoshi-color-4" for="input-goal">
+          <span class="input__label-content input__label-content--hoshi">How do you plan to use the dataset?</span>
+        </label>
+      </span>
+
+       <span class="input_my">
+          <label for="l_ok" class="radio">
+              <span class="radio-bg"></span>
+                <input type="checkbox" name="liscence" id="l_ok" checked='checked'/>I have understood that this dataset is for research purpose only and released under a
+              <span class="radio-on"></span>
+          </label>
+
+          <a href='http://creativecommons.org/liscences/by/3.0/' target="view_window">Creative Conmmons Attribution 3.0 Unported License</a>
+      </span>
+
+      <div class = label>Please Fill in the Form!</div>
+      <div id = 'btn_draw'>Download Now!</div>
+
+
+      
+    </section>
+  </div>
+  
+
+<div class="stage-shelf stage-shelf-right hidden" id="sidebar">
+  <ul class="nav nav-bordered nav-stacked">
+
+    <li class="nav-item">
+      <a class="nav-link" href ='#con_index'>Index</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href ='#con_overview' >Overview</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/aboutus">About us</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/contribution">Contribution</a>
+    </li>
+    <li class="nav-item" >
+      <a class="nav-link" href ='#con_download'>Download</a>
+    </li>
+    <!-- <li class="nav-divider"></li>
+    <li class="nav-header">Docs</li> -->
+  </ul>
+</div>
+
+<div class="stage" id="stage">
+
+<div class="block block-inverse block-fill-height app-header" style="background: white; padding: 100px 1rem;" id = 'con_index'>
+
+  <nav class="navbar navbar-transparent navbar-fixed-top navbar-padded app-navbar">
+
+    <div class="container pt-4">
+     <!--  <div class = 'topbar'> -->
+        <div class = 'nav_logo'></div>
+     <!--  </div> -->
+     <button
+        class="navbar-toggler hidden-md-up float-right"
+        type="button"
+        data-target="#stage"
+        data-toggle="stage"
+        data-distance="-250">
+      </button>
+
+       <div class="hidden-sm-down text-uppercase">
+        <ul class="navv navbar-nav float-right">
+          <li class="nav-item px-1 ">
+            <a class="nav-link" id = 'navv_index'>Index</a>
+          </li>
+          <li class="nav-item px-1 ">
+            <a class="nav-link" id = 'navv_overview'>Overview</a>
+          </li>
+          <li class="nav-item px-1 ">
+            <a class="nav-link" href="/aboutus">About us</a>
+          </li>
+
+          <li class="nav-item px-1 ">
+            <a class="nav-link" href="/contribution">Contribution</a>
+          </li>
+          <li class="nav-item px-1 ">
+            <a class="nav-link" id = 'navv_download'><div class = 'download'>DOWNLOAD</div></a>
+          </li>
+        </ul>
+      </div> <!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <div class="block-xs-middle pb-5">
+
+    <div class = 'view'>
+      <div class = 'content'>
+        <div class = 'image'></div>
+        <div class = 'text'>
+          <h2 class="block-titleData frequency">A Vector Drawing Dataset Containing 5,240,088 Face Sketches</h1>
+          <p class="lead mb-4 text-muted">The dataset has different categories, including genders (male, female), viewing angles (frontal, mid-profile left, mid-profile right view), emotions (neutral, happy, sad, angry, fearful, surprised, disgusted), and artistic styles (realistic, cartoon, abstract styles).</p>
+          <button class="btn btn-primary btn-lg" id = 'btn_download'>DOWNLOAD</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="block block-secondary app-block-marketing-grid " id = 'con_overview'>
+  <div class="container" style='padding: 3rem 0;'>
+    <div class="row app-align-center">
+
+      <div class="col-sm-7 construct">
+        <img class="app-iphone" src="/img/data_construct.png" style="width: 100%;">
+      </div>
+
+      <div class="col-md-8 offset-md-1 col-sm-12 offset-sm-0">
+          <h3>Construct the FaceX Dataset</h3>
+          <p class="lead mb-5">We invited a group of designers to draw the dataset.</p> 
+          <h5><strong>1 </strong>Draw the Facial Features</h5>
+          <p>First, the designers drew faical features with neutral emotion in front view. Then, they drew the facial features with six basic emotions following some rules based on a literature survey. After that, they created those features in mid-profile left view. </p>
+
+          <h5><strong>2 </strong>Adjust Each Line</h5>
+          <p> Designers adjusted the anchor points in each line to ensure the two handles of the point in line so that the lines in each sketch are smooth and neat. 
+
+          <h5><strong>3 </strong>Generate Faces</h5>
+          <p>We placed the facial features that designers drew based on the divine proportion of the human head and combined these hand-drawn facial features into different faces.</p>
+
+        </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="block block-secondary app-block-marketing-grid "  > 
+  <div class="container text-xs-center" style='padding: 3rem 0;'>
+
+    <div class="horn">
+        <div class="lt"></div>
+        <div class="rt"></div>
+        <div class="rb"></div>
+        <div class="lb"></div>
+     </div>
+
+    <div class="row mb-5">
+      <div class="col-xs-10 offset-xs-1 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3">
+         <h7 class="text-muted mb-2" style='font-weight: 300; margin-bottom: 1.5rem;'>Here is A Brief Overview of FaceX. </h7><!--  For More details, Please Click <a href="">Here</a> -->
+
+        <h5 class="mb-4" style='color: #555555;'>FaceX has diversity to meet the requirements from different designers.</h5>
+      </div>
+    </div>
+
+    <div class="row app-marketing-grid" >
+
+      <div class="col-md-4 px-4 mb-5">
+        <img class="mb-1" src="/img/gender.svg">
+        <p><strong>Two genders</strong> </p>
+      </div>
+
+      <div class="col-md-4 px-4 mb-5">
+        <img class="mb-1" src="/img/artistic_style.svg">
+        <p><strong>Three artistic styles</strong></p>
+      </div>
+      <div class="col-md-4 px-4 mb-5">
+        <img class="mb-1" src="/img/viewing_angle.svg">
+        <p><strong>Two viewing angles</strong></p>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-xs-10 offset-xs-1 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3">        
+        <h5 class="mb-4" style='color: #555555; margin-top: 1.5rem;'>FaceX is informative to convey six basic emotions.</h5>      
+      </div>
+    </div>
+
+    <div class="row app-marketing-grid">
+      <div class="col-md-4 px-4 mb-5">
+        <img class="mb-1" src="/img/emotion01.svg">
+      </div>
+      <div class="col-md-4 px-4 mb-5">
+        <img class="mb-1" src="/img/emotion02.svg">
+      </div>
+      <div class="col-md-4 px-4 mb-5">
+        <img class="mb-1" src="/img/emotion03.svg">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="block block-secondary app-iphone-block" id = 'con_download'>
+  <div class="container">
+    <div class="row app-align-center">
+
+
+
+      <div class="col-md-6 offset-md-1 col-sm-12 offset-sm-0" style = 'margin-left: 0'>
+ <!--        <h6 class="text-muted text-uppercase">Download FaceX</h6> -->
+        <h3>Download the FaceX Set</h3>
+        <p class="lead mb-4">We provide two data formats of FaceX.</p>
+        <div class="row hidden-md-down">
+          <div class="col-sm-6 mb-3">
+            <h5>Svg File</h5>
+            <p>Scalable Vector Graphics. An XML-based vector image format for two-dimensional graphics with support for interactivity and animation. <br><a href="https://en.wikipedia.org/wiki/Scalable_Vector_Graphics" class="text-primary">Learn more</a>.</p>
+            <button class = 'download' id='svg_download'>DOWNLOAD</button>
+          </div>
+          <div class="col-sm-6">
+            <h5>Npz File</h5>
+            <p>A sequence of stroke vectors, including three stroke states: a stroke continuous from the last point, a stroke ends, and a drawing ends. <br><a href="https://arxiv.org/abs/1704.03477" class="text-primary">Learn more</a>.</p>
+            <button class = 'download' id='npz_download'>DOWNLOAD</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-5 hidden-sm-down">
+        <img class="app-iphone" src="/img/data_download.svg" style="width: 100%;margin-left: 8%;">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="block block-inverse app-footer" style='padding: 3rem 0;' >
+ <div class="container">
+    <div class="row">
+      <div class="col-md-5 mb-5">
+        <ul class="list-unstyled list-spaced">
+          <li class="mb-2"><h6 class="text-uppercase">About</h6></li>
+          <li class="text_footer">
+             We’ve been working on Intelligent Big Data Visualization Lab (iDV<sup>x</sup> Lab). If you’d like to learn about us, please visit at <a href="http://idvx.lab.tongji.edu.cn">idvx.lab.tongji.edu.cn</a>.
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-2 offset-md-1 mb-5">
+        <ul class="list-unstyled list-spaced">
+          <li class="mb-2"><h6 class="text-uppercase">Product</h6></li>
+          <li class="text_footer">Features</li>
+          <li class="text_footer">Examples</li>
+          <li class="text_footer">Tour</li>
+          <li class="text_footer">Gallery</li>
+        </ul>
+      </div>
+      <div class="col-md-2 mb-5">
+        <ul class="list-unstyled list-spaced">
+          <li class="mb-2"><h6 class="text-uppercase">Apis</h6></li>
+          <li class="text_footer">Rich data</li>
+          <li class="text_footer">Simple data</li>
+          <li class="text_footer">Real time</li>
+          <li class="text_footer">Social</li>
+        </ul>
+      </div>
+      <div class="col-md-2 mb-5">
+        <ul class="list-unstyled list-spaced">
+          <li class="mb-2"><h6 class="text-uppercase">Legal</h6></li>
+          <li class="text_footer">Terms</li>
+          <li class="text_footer">Legal</li>
+          <li class="text_footer">Privacy</li>
+          <li class="text_footer">License</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/tether.min.js"></script>
+  <script src="/js/toolkit.js"></script>
+  <script src="/js/application.js"></script>
+  <script src="/js/classie.js"></script>
+  </body>
+
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#navv_index").click(function() {
+      $("html, body").animate({
+        scrollTop: $("#con_index").offset().top }, {duration: 500,easing: "swing"});
+        return false;
+      });
+      $("#navv_overview").click(function() {
+        $("html, body").animate({
+          scrollTop: $("#con_overview").offset().top }, {duration: 500,easing: "swing"});
+          return false;
+      });
+
+      $("#navv_download, #btn_download").click(function() {
+        $("html, body").animate({
+          scrollTop: $("#con_download").offset().top }, {duration: 500,easing: "swing"});
+          return false;
+        });
+
+      // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+      if (!String.prototype.trim) {
+        (function() {
+          // Make sure we trim BOM and NBSP
+          var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+          String.prototype.trim = function() {
+            return this.replace(rtrim, '');
+          };
+        })();
+      }
+
+      [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+        // in case the input is already filled..
+        if( inputEl.value.trim() !== '' ) {
+          classie.add( inputEl.parentNode, 'input--filled' );
+        }
+
+        // events:
+        inputEl.addEventListener( 'focus', onInputFocus );
+        inputEl.addEventListener( 'blur', onInputBlur );
+      } );
+
+      function onInputFocus( ev ) {
+        classie.add( ev.target.parentNode, 'input--filled' );
+        $(".submission .label").css('display','none');
+      }
+
+      function onInputBlur( ev ) {
+        if( ev.target.value.trim() === '' ) {
+          classie.remove( ev.target.parentNode, 'input--filled' );
+        }
+      }
+    });
+
+    var download_file = ''
+
+    $("#svg_download").click(function(){
+       $(".submission_page").css('display','block');
+       download_file = 'svg';
+    });
+
+
+    $("#npz_download").click(function(){
+       $(".submission_page").css('display','block');
+       download_file = 'npz';
+    });
+
+    $(".btn_cancel").click(function(){
+       $(".submission_page").css('display','none');
+    });
+
+    $("#btn_draw").click(function(){
+
+      // var chkt = new RegExp("(^13[0-9]{9}$|14[0-9]{9}|15[0-9]{9}$|18[0-9]{9}$)|(^0(10|2[0-5789]|\\d{3})\\d{7,8}$)");
+
+      var chke = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$");
+
+      if(!chke.test($("#input-email").val())){
+        $("#input-email").focus();
+        $(".submission .label").css('display','block');
+        $(".submission .label").text('Please input the right email address!');
+      }
+
+      else if (($("#input-name").val() != '')&&($("#input-com").val() != '')&&($("#input-tel").val() != '')&&($("#input-email").val() != '')&&($("#input-goal").val() != '')&&($("input[type='checkbox']").is(':checked')==true)){
+
+        $(".submission .label").css('display','none');
+
+        axios.post('/download', {
+          'file' : download_file,
+          'name': $("#input-name").val(),
+          'company': $("#input-com").val(),
+          'tel': $("#input-tel").val(),
+          'email': $("#input-email").val(),
+          'goal': $("#input-goal").val()
+        })
+          .then(function (response) {
+            download_url = response.request.responseURL;
+            const oA = document.createElement('a');
+            oA.href = download_url;
+            oA.download = download_url.slice(download_url.lastIndexOf('/') + 1);
+            const event = document.createEvent('MouseEvents');
+            event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+            oA.dispatchEvent(event);
+          });
+
+      }else if ($("input[type='checkbox']").is(':checked')==false) {
+        $(".submission .label").css('display','block');
+        $(".submission .label").text('Please read the Terms and Conditions!');
+      }else{
+        $(".submission .label").css('display','block');
+        $(".submission .label").text('Please fill in the form!');
+      }
+    });
+
+    </script>
+
+</html>
+
