@@ -20,8 +20,7 @@
       <link href="css/application-startup.css" rel="stylesheet">
       <link rel = "stylesheet" type="text/css" href="css/style.css">
       <link rel = "stylesheet" type="text/css" href="css/component.css">
-
-    
+      <link rel="shortcut icon" href="img/idvx_icon.ico" />   
 
     <style>
       /* note: this is a hack for ios iframe for bootstrap themes shopify page */
@@ -67,7 +66,7 @@
 
 <div class="stage" id="stage">
 
-<div class="block block-inverse block-fill-height app-header" style="background: white; padding: 100px 1rem;" id = 'con_index'>
+<div class="block block-inverse block-fill-height app-header" style="background: white; padding: 100px 1rem;">
 
   <nav class="navbar navbar-transparent navbar-fixed-top navbar-padded app-navbar">
 
@@ -125,13 +124,26 @@
 
     
     <div class= 'upload'>
-      <h5><strong>Start Uploading! </strong></h5>
-      <form action="http://api.facex.idvxlab.com:7000/upload" method="post" enctype="multipart/form-data">
-        <!-- <a href="javascript:;" class="a-upload"> -->
-           <input type="file" name="file" value = 'Choose file...' multiple>
-       <!--  </a> -->
-        <input type="submit" value="Upload">
-      </form>
+
+      <div class = 'Uploading' >
+        <h5><strong>Start Uploading! </strong></h5>
+        <form action="http://api.facex.idvxlab.com:7000/upload" method="post" enctype="multipart/form-data">
+          <!-- <a href="javascript:;" class="a-upload"> -->
+             <input type="file" name="file" value = 'Choose file...' multiple>
+         <!--  </a> -->
+          <input type="submit" value="Upload">
+        </form>
+      </div>
+
+      <div class = 'Success' style='display: none'>
+        <h5><strong>Upload complete! </strong></h5>
+
+        <p style = 'margin-top: 32px;color:#2595FF;' id = 'Continue'>Continue to upload</p>
+
+
+      </div>
+
+
     </div>
 
         
@@ -191,24 +203,34 @@
   </body>
 
 
-<!--   <script type="text/javascript">
-    $(".a-upload").on("change","input[type='file']",function(){
-      var filePath=$(this).val();
-      if(filePath.indexOf("svg")!=-1 || filePath.indexOf("zip")!=-1){
-          $(".fileerrorTip").html("").hide();
-          var arr=filePath.split('\\');
-          var fileName=arr[arr.length-1];
-          $(".showFileName").html(fileName);
-          $(".a-upload").text(fileName)
-      }else{
-          $(".showFileName").html("");
+  <script type="text/javascript">
+  //   $(".a-upload").on("change","input[type='file']",function(){
+  //     var filePath=$(this).val();
+  //     if(filePath.indexOf("svg")!=-1 || filePath.indexOf("zip")!=-1){
+  //         $(".fileerrorTip").html("").hide();
+  //         var arr=filePath.split('\\');
+  //         var fileName=arr[arr.length-1];
+  //         $(".showFileName").html(fileName);
+  //         $(".a-upload").text(fileName)
+  //     }else{
+  //         $(".showFileName").html("");
 
-          alert('Please upload svg files or zip files!');
-          return false 
-      }
-  })
+  //         alert('Please upload svg files or zip files!');
+  //         return false 
+  //     }
+  // })
 
-    </script> -->
+  // upload Success
+  //   $('.Success').css('display','block');
+  // $('.Uploading').css('display','none');
+
+      $("#Continue").click(function() {
+        $('.Success').css('display','none');
+        $('.Uploading').css('display','block');
+
+      });
+
+    </script>
 
 </html>
 
