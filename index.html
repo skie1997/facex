@@ -12,13 +12,13 @@
 
     
       <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600' rel='stylesheet' type='text/css'>
-      <link href="/css/toolkit-startup.css" rel="stylesheet">
-      <link href="/css/application-startup.css" rel="stylesheet">
-      <link rel = "stylesheet" type="text/css" href="/css/style.css">
-      <link rel = "stylesheet" type="text/css" href="/css/component.css">
+      <link href="css/toolkit-startup.css" rel="stylesheet">
+      <link href="css/application-startup.css" rel="stylesheet">
+      <link rel = "stylesheet" type="text/css" href="css/style.css">
+      <link rel = "stylesheet" type="text/css" href="css/component.css">
 
       <!-- axios -->
-      <script language="javascript" type="text/javascript" src="/js/axios.min.js"></script>
+      <script language="javascript" type="text/javascript" src="js/axios.min.js"></script>
 
   
     <style>
@@ -86,11 +86,10 @@
        <span class="input_my">
           <label for="l_ok" class="radio">
               <span class="radio-bg"></span>
-                <input type="checkbox" name="liscence" id="l_ok" checked='checked'/>I have understood that this dataset is for research purpose only and released under a
+                <input type="checkbox" name="liscence" id="l_ok" checked='checked'/>
               <span class="radio-on"></span>
           </label>
-
-          <a href='http://creativecommons.org/liscences/by/3.0/' target="view_window">Creative Conmmons Attribution 3.0 Unported License</a>
+          This dataset is for research purpose only and released under a <a href='http://creativecommons.org/liscences/by/3.0/' target="view_window">Creative Conmmons Attribution 3.0 Unported License</a>.
       </span>
 
       <div class = label>Please Fill in the Form!</div>
@@ -188,7 +187,7 @@
     <div class="row app-align-center">
 
       <div class="col-sm-7 construct">
-        <img class="app-iphone" src="/img/data_construct.png" style="width: 100%;">
+        <img class="app-iphone" src="img/data_construct.png" style="width: 100%;">
       </div>
 
       <div class="col-md-8 offset-md-1 col-sm-12 offset-sm-0">
@@ -231,16 +230,16 @@
     <div class="row app-marketing-grid" >
 
       <div class="col-md-4 px-4 mb-5">
-        <img class="mb-1" src="/img/gender.svg">
+        <img class="mb-1" src="img/gender.svg">
         <p><strong>Two genders</strong> </p>
       </div>
 
       <div class="col-md-4 px-4 mb-5">
-        <img class="mb-1" src="/img/artistic_style.svg">
+        <img class="mb-1" src="img/artistic_style.svg">
         <p><strong>Three artistic styles</strong></p>
       </div>
       <div class="col-md-4 px-4 mb-5">
-        <img class="mb-1" src="/img/viewing_angle.svg">
+        <img class="mb-1" src="img/viewing_angle.svg">
         <p><strong>Two viewing angles</strong></p>
       </div>
     </div>
@@ -252,13 +251,13 @@
 
     <div class="row app-marketing-grid">
       <div class="col-md-4 px-4 mb-5">
-        <img class="mb-1" src="/img/emotion01.svg">
+        <img class="mb-1" src="img/emotion01.svg">
       </div>
       <div class="col-md-4 px-4 mb-5">
-        <img class="mb-1" src="/img/emotion02.svg">
+        <img class="mb-1" src="img/emotion02.svg">
       </div>
       <div class="col-md-4 px-4 mb-5">
-        <img class="mb-1" src="/img/emotion03.svg">
+        <img class="mb-1" src="img/emotion03.svg">
       </div>
     </div>
   </div>
@@ -291,7 +290,7 @@
       </div>
 
       <div class="col-sm-5 hidden-sm-down">
-        <img class="app-iphone" src="/img/data_download.svg" style="width: 100%;margin-left: 8%;">
+        <img class="app-iphone" src="img/data_download.svg" style="width: 100%;margin-left: 8%;">
       </div>
     </div>
 
@@ -343,11 +342,11 @@
 </div>
 
 
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/tether.min.js"></script>
-  <script src="/js/toolkit.js"></script>
-  <script src="/js/application.js"></script>
-  <script src="/js/classie.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/tether.min.js"></script>
+  <script src="js/toolkit.js"></script>
+  <script src="js/application.js"></script>
+  <script src="js/classie.js"></script>
   </body>
 
 
@@ -437,7 +436,7 @@
 
         $(".submission .label").css('display','none');
 
-        axios.post('/download', {
+        axios.post('http://api.facex.idvxlab.com:7000/download', {
           'file' : download_file,
           'name': $("#input-name").val(),
           'company': $("#input-com").val(),

@@ -16,10 +16,10 @@
 
     
       <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600' rel='stylesheet' type='text/css'>
-      <link href="/css/toolkit-startup.css" rel="stylesheet">
-      <link href="/css/application-startup.css" rel="stylesheet">
-      <link rel = "stylesheet" type="text/css" href="/css/style.css">
-      <link rel = "stylesheet" type="text/css" href="/css/component.css">
+      <link href="css/toolkit-startup.css" rel="stylesheet">
+      <link href="css/application-startup.css" rel="stylesheet">
+      <link rel = "stylesheet" type="text/css" href="css/style.css">
+      <link rel = "stylesheet" type="text/css" href="css/component.css">
 
     
 
@@ -126,7 +126,7 @@
     
     <div class= 'upload'>
       <h5><strong>Start Uploading! </strong></h5>
-      <form action="/upload/" method="post" enctype="multipart/form-data">
+      <form action="http://api.facex.idvxlab.com:7000/upload" method="post" enctype="multipart/form-data">
         <!-- <a href="javascript:;" class="a-upload"> -->
            <input type="file" name="file" value = 'Choose file...' multiple>
        <!--  </a> -->
@@ -183,15 +183,15 @@
 </div>
 
 
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/tether.min.js"></script>
-    <script src="/js/toolkit.js"></script>
-    <script src="/js/application.js"></script>
-    <script src="/js/classie.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/toolkit.js"></script>
+    <script src="js/application.js"></script>
+    <script src="js/classie.js"></script>
   </body>
 
 
-  <script type="text/javascript">
+<!--   <script type="text/javascript">
     $(".a-upload").on("change","input[type='file']",function(){
       var filePath=$(this).val();
       if(filePath.indexOf("svg")!=-1 || filePath.indexOf("zip")!=-1){
@@ -208,7 +208,7 @@
       }
   })
 
-    </script>
+    </script> -->
 
 </html>
 
