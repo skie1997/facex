@@ -423,6 +423,7 @@
 
     $("#btn_draw").click(function(){
 
+
       // var chkt = new RegExp("(^13[0-9]{9}$|14[0-9]{9}|15[0-9]{9}$|18[0-9]{9}$)|(^0(10|2[0-5789]|\\d{3})\\d{7,8}$)");
 
       var chke = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$");
@@ -435,6 +436,8 @@
 
       else if (($("#input-name").val() != '')&&($("#input-com").val() != '')&&($("#input-tel").val() != '')&&($("#input-email").val() != '')&&($("#input-goal").val() != '')&&($("input[type='checkbox']").is(':checked')==true)){
 
+        
+
         $(".submission .label").css('display','none');
 
         axios.post('http://api.facex.idvxlab.com:7000/download', {
@@ -444,9 +447,8 @@
           'tel': $("#input-tel").val(),
           'email': $("#input-email").val(),
           'goal': $("#input-goal").val()
-        })
-          .then(function (response) {
-            download_url = response.request.responseURL;
+        }).then(function (response) {
+            download_url = 'http://api.facex.idvxlab.com:7000'+response.data;
             const oA = document.createElement('a');
             oA.href = download_url;
             oA.download = download_url.slice(download_url.lastIndexOf('/') + 1);
