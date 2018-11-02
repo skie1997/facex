@@ -114,6 +114,10 @@
     <li class="nav-item">
       <a class="nav-link" href="https://idvxlab.github.io/">About us</a>
     </li>
+
+    <li class="nav-item px-1 ">
+      <a class="nav-link" href="/acknowledgement">Acknowledgement</a>
+    </li>
 <!--     <li class="nav-item">
       <a class="nav-link" href="/contribute">Contribute</a>
     </li> -->
@@ -155,6 +159,12 @@
             <a class="nav-link" href="https://idvxlab.github.io/">About us</a>
           </li>
 
+          <li class="nav-item px-1 ">
+            <a class="nav-link" href="/acknowledgement">Acknowledgement</a>
+          </li>
+
+          
+
 <!--           <li class="nav-item px-1 ">
             <a class="nav-link" href="/contribute">Contribute</a>
           </li> -->
@@ -178,11 +188,11 @@
           <a href="/contribute"><button class="btn btn-primary btn-lg" id = 'btn_upload' >CONTRIBUTE</button></a>
           <div class = 'num_down'>
             <img src = 'img/num_download.png'>
-            <p style='left:4px; color:#555555;line-height:22px'>svg files:</p>
-            <p style='color:#555555;line-height:22px;margin-right:32px' id ='num_svg'>0</p>
+            <p style='left:4px; color:#555555;line-height:22px'>svg format: </p>
+            <p style='left:2px;color:#555555;line-height:22px;margin-right:32px' id ='num_svg'>0</p>
             <img src = 'img/num_download.png'>
-            <p style='left:4px; color:#555555;line-height:22px'>npz files:</p>
-            <p style='color:#555555;line-height:22px' id ='num_npz'>0</p>
+            <p style='left:4px; color:#555555;line-height:22px'>npz format: </p>
+            <p style='left:2px;color:#555555;line-height:22px' id ='num_npz'>0</p>
           </div>
         </div>
         
@@ -284,12 +294,12 @@
         <p class="lead mb-4">We provide two data formats of FaceX.</p>
         <div class="row hidden-md-down">
           <div class="col-sm-6 mb-3">
-            <h5>SVG Format</h5>
+            <h5>SVG Format: 5GB</h5>
             <p>Scalable Vector Graphics. An XML-based vector image format for two-dimensional graphics with support for interactivity and animation. <br><a href="https://en.wikipedia.org/wiki/Scalable_Vector_Graphics" class="text-primary">Learn more</a>.</p>
             <button class = 'download' id='svg_download'>DOWNLOAD</button>
           </div>
           <div class="col-sm-6">
-            <h5>NPZ Format</h5>
+            <h5>NPZ Format: 500MB</h5>
             <p>The stroke vector format used for training the model. <br><a href="https://arxiv.org/abs/1704.03477" class="text-primary">Learn more</a>.</p>
             <button class = 'download' id='npz_download'>DOWNLOAD</button>
           </div>
@@ -318,7 +328,7 @@
     </div>
 
      <div class="row app-align-center">
-        <p style='color: #787878;'>If you use our dataset, please cite: Nan Cao, Xin Yan, Yang Shi, and Chaoran Chen. AI-Sketcher: A Deep Generative Model for Producing High Quality Sketches. <a href = '/AISketcher2019.bib'>[bib]</a></p>
+        <p style='color: #787878; text-align: left;'>If you use our dataset, please cite: Nan Cao, Xin Yan, Yang Shi, and Chaoran Chen. AI-Sketcher: A Deep Generative Model for Producing High Quality Sketches. <a href = '/AISketcher2019.bib'>[bib]</a></p>
 
     </div>
 
@@ -433,10 +443,22 @@
       }
     });
 
-    axios.get('https://api.facex.idvxlab.com:7000/downloader').then(function (response) {
-        $('#num_npz').html(response.data);
+    axios.get('https://api.facex.idvxlab.com:7000/downloader', {
+      params: {
+        file: 'svg'
+      }
+    }).then(function (response) {
         $('#num_svg').html(response.data);
     });
+
+    axios.get('https://api.facex.idvxlab.com:7000/downloader', {
+      params: {
+        file: 'npz'
+      }
+    }).then(function (response) {
+        $('#num_npz').html(response.data);
+    });
+
 
     
 
