@@ -68,7 +68,7 @@
       <span class="input input--hoshi">
         <input class="input__field input__field--hoshi" type="text" id="input-tel" />
         <label class="input__label input__label--hoshi input__label--hoshi-color-2" for="input-tel">
-          <span class="input__label-content input__label-content--hoshi">* Tel.</span>
+          <span class="input__label-content input__label-content--hoshi">Tel.</span>
         </label>
       </span>
       <span class="input input--hoshi">
@@ -105,9 +105,9 @@
 <div class="stage-shelf stage-shelf-right hidden" id="sidebar">
   <ul class="nav nav-bordered nav-stacked">
 
-    <li class="nav-item">
+<!--     <li class="nav-item">
       <a class="nav-link" href ='#con_index'>Index</a>
-    </li>
+    </li> -->
     <li class="nav-item">
       <a class="nav-link" href ='#con_overview' >Overview</a>
     </li>
@@ -145,9 +145,9 @@
 
        <div class="hidden-sm-down text-uppercase">
         <ul class="navv navbar-nav float-right">
-          <li class="nav-item px-1 ">
+<!--           <li class="nav-item px-1 ">
             <a class="nav-link" id = 'navv_index'>Index</a>
-          </li>
+          </li> -->
           <li class="nav-item px-1 ">
             <a class="nav-link" id = 'navv_overview'>Overview</a>
           </li>
@@ -172,13 +172,18 @@
       <div class = 'content'>
         <div class = 'image'></div>
         <div class = 'text'>
-          <h2 class="block-titleData frequency">A Vector Drawing Dataset Containing 5,240,088 Face Sketches</h1>
-          <p class="lead mb-4 text-muted">The dataset has different categories, including genders (male, female), viewing angles (frontal, mid-profile left, mid-profile right view), emotions (neutral, happy, sad, angry, fearful, surprised, disgusted), and artistic styles (realistic, cartoon, abstract styles).</p>
+          <h2 class="block-titleData frequency">A Vector Drawing Dataset Containing 5,240,088 Facial Sketches</h1>
+          <p class="lead mb-4 text-muted">The dataset contains over 5 million labeled facial sketches categorized by genders (male, female), viewing angles (frontal, mid-profile left, mid-profile right view), emotions (neutral, happy, sad, angry, fearful, surprised, disgusted), and artistic styles (realistic, cartoon, abstract styles).</p>
           <button class="btn btn-primary btn-lg" id = 'btn_download'>DOWNLOAD</button>
           <a href="/contribute"><button class="btn btn-primary btn-lg" id = 'btn_upload' >CONTRIBUTE</button></a>
+          <div class = 'num_down'>
+            <img src = 'img/num_download.png'>
+            <p style='left:4px; color:#555555;line-height:22px' id ='num_download'>0</p>
+          </div>
         </div>
         
       </div>
+
     </div>
   </div>
 </div>
@@ -194,9 +199,9 @@
 
       <div class="col-md-8 offset-md-1 col-sm-12 offset-sm-0">
           <!-- <h3>Construct the FaceX Dataset</h3> -->
-          <p class="lead mb-5"><strong style='color: #555555;'>FaceX dataset is drawn by a group of designers.</strong></p> 
+          <p class="lead mb-5"><h2 style='color: #424242;'>FaceX Dataset is Drawn by a Group of Designers.</strong></h2> 
 
-          <p>In total, the designers drew 2,205 pairs of eyebrows, 2,016 pairs of eyes, 1,806 noses, and 2,058 mouths that satisfy aesthetic criteria. We combined these hand-drawn facial features into different faces and placed these facial features according to the divine proportion of the human head</p>
+          <p style='margin-top:24px'>In total, the designers drew 2,205 pairs of eyebrows, 2,016 pairs of eyes, 1,806 noses, and 2,058 mouths that satisfy aesthetic criteria. We combined these hand-drawn facial features into different faces and placed these facial features according to the divine proportion of the human head.</p>
 
         </div>
     </div>
@@ -271,17 +276,17 @@
 
       <div class="col-md-6 offset-md-1 col-sm-12 offset-sm-0" style = 'margin-left: 0'>
  <!--        <h6 class="text-muted text-uppercase">Download FaceX</h6> -->
-        <h3>Download the FaceX Set</h3>
+        <h3>Download the FaceX Dataset</h3>
         <p class="lead mb-4">We provide two data formats of FaceX.</p>
         <div class="row hidden-md-down">
           <div class="col-sm-6 mb-3">
-            <h5>Svg Format</h5>
+            <h5>SVG Format</h5>
             <p>Scalable Vector Graphics. An XML-based vector image format for two-dimensional graphics with support for interactivity and animation. <br><a href="https://en.wikipedia.org/wiki/Scalable_Vector_Graphics" class="text-primary">Learn more</a>.</p>
             <button class = 'download' id='svg_download'>DOWNLOAD</button>
           </div>
           <div class="col-sm-6">
-            <h5>Npz Format</h5>
-            <p>A sequence of stroke vectors, including three stroke states: a stroke continuous from the last point, a stroke ends, and a drawing ends. <br><a href="https://arxiv.org/abs/1704.03477" class="text-primary">Learn more</a>.</p>
+            <h5>NPZ Format</h5>
+            <p>The stroke vector format used for training the model. <br><a href="https://arxiv.org/abs/1704.03477" class="text-primary">Learn more</a>.</p>
             <button class = 'download' id='npz_download'>DOWNLOAD</button>
           </div>
         </div>     
@@ -294,10 +299,24 @@
     </div>
 
 
-       <p style='color: #787878;'>If you use our dataset, please cite: Nan Cao, Xin Yan, Yang Shi, and Chaoran Chen. AI-Sketcher: A Deep Generative Model for Producing High Quality Sketches. <a href = '/AISketcher2018.bib'>[bib]</a></p>
+
 
   </div>
 </div>
+
+
+
+<div class="block block-secondary app-iphone-block" id = 'con_download'>
+  <div class="container">
+    <div class="row app-align-center">
+        <h2 style='color: #787878;'>If you use our dataset, please cite: Nan Cao, Xin Yan, Yang Shi, and Chaoran Chen. AI-Sketcher: A Deep Generative Model for Producing High Quality Sketches. <a href = '/AISketcher2018.bib'>[bib]</a></h2>
+
+    </div>
+
+  </div>
+</div>
+
+
 
 
 
@@ -308,7 +327,7 @@
         <ul class="list-unstyled list-spaced">
           <li class="mb-2"><h6 class="text-uppercase">About</h6></li>
           <li class="text_footer">
-             We’ve been working on Intelligent Big Data Visualization Lab (iDV<sup>x</sup> Lab). If you’d like to learn about us, please visit at <a href="https://idvxlab.github.io/">idvxlab.github.io</a>.
+             We’ve been working on Intelligent Big Data Visualization Lab (iDV<sup>x</sup> Lab). If you’d like to learn about us, please visit at <a href="https://idvxlab.com/">idvxlab.com</a>.
           </li>
         </ul>
       </div>
@@ -336,7 +355,7 @@
 <!--           <li class="text_footer">Terms</li>
           <li class="text_footer">Legal</li>
           <li class="text_footer">Privacy</li> -->
-          <li class="text_footer">License</li>
+          <li class="text_footer"><a href='http://creativecommons.org/liscences/by/3.0/' target="view_window">License</a></li>
         </ul>
       </div>
     </div>
@@ -405,6 +424,12 @@
       }
     });
 
+    axios.get('https://api.facex.idvxlab.com:7000/downloader').then(function (response) {
+        $('#num_download').html(response.data);
+    });
+
+    
+
     var download_file = ''
 
     $("#svg_download").click(function(){
@@ -441,7 +466,7 @@
 
         $(".submission .label").css('display','none');
 
-        axios.post('http://api.facex.idvxlab.com:7000/download', {
+        axios.post('https://api.facex.idvxlab.com:7000/download', {
           'file' : download_file,
           'name': $("#input-name").val(),
           'company': $("#input-com").val(),
@@ -449,7 +474,7 @@
           'email': $("#input-email").val(),
           'goal': $("#input-goal").val()
         }).then(function (response) {
-            download_url = 'http://api.facex.idvxlab.com:7000'+response.data;
+            download_url = 'https://api.facex.idvxlab.com:7000'+response.data;
             const oA = document.createElement('a');
             oA.href = download_url;
             oA.download = download_url.slice(download_url.lastIndexOf('/') + 1);
