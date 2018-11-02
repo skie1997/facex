@@ -1,6 +1,7 @@
+
 .navbar{
     color: #363636;
-    font-family: 'Avernir';
+    font-family: 'Avernir','Arial';
     background: white ;
     z-index: 1
 }
@@ -150,6 +151,8 @@ h2 {
     margin-top: 10%;
 }
 
+
+
 .text-muted {
     margin-top: 3%; 
     color: #363636 !important;
@@ -169,6 +172,14 @@ h2 {
     margin-top: 10%;
 
 }
+
+#btn_upload{
+    -webkit-appearance: none;
+    background: none;
+    color: #3b28e6;
+    box-shadow:none;
+}
+
 .col-sm-6 .download{
     padding: 8px 16px;
     top: 1rem;
