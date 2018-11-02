@@ -8,19 +8,24 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
 
-    <title>
-      
-        FaceX 
-      
-    </title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128570807-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
+      gtag('config', 'UA-128570807-1');
+    </script>
+
+    <title>FaceX </title>
     
-      <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600' rel='stylesheet' type='text/css'>
-      <link href="css/toolkit-startup.css" rel="stylesheet">
-      <link href="css/application-startup.css" rel="stylesheet">
-      <link rel = "stylesheet" type="text/css" href="css/style.css">
-      <link rel = "stylesheet" type="text/css" href="css/component.css">
-      <link rel="shortcut icon" href="img/idvx_icon.ico" />   
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600' rel='stylesheet' type='text/css'>
+    <link href="css/toolkit-startup.css" rel="stylesheet">
+    <link href="css/application-startup.css" rel="stylesheet">
+    <link rel = "stylesheet" type="text/css" href="css/style.css">
+    <link rel = "stylesheet" type="text/css" href="css/component.css">
+    <link rel="shortcut icon" href="img/idvx_icon.ico" />   
 
     <style>
       /* note: this is a hack for ios iframe for bootstrap themes shopify page */
@@ -60,12 +65,6 @@
     <li class="nav-item px-1 ">
       <a class="nav-link" href="/acknowledgement">Acknowledgement</a>
     </li>
-
-<!--    <li class="nav-item">
-      <a class="nav-link" href="#" style = 'border-left: 2px solid #7359f0;'>Contribute</a>
-    </li> -->
-    <!-- <li class="nav-divider"></li>
-    <li class="nav-header">Docs</li> -->
   </ul>
 </div>
 
@@ -76,9 +75,7 @@
   <nav class="navbar navbar-transparent navbar-fixed-top navbar-padded app-navbar">
 
     <div class="container pt-4">
-     <!--  <div class = 'topbar'> -->
         <div class = 'nav_logo'></div>
-     <!--  </div> -->
      <button
         class="navbar-toggler hidden-md-up float-right"
         type="button"
@@ -100,9 +97,6 @@
             <a class="nav-link" href="/acknowledgement">Acknowledgement</a>
           </li>
 
-<!--            <li class="nav-item px-1 ">
-            <a class="nav-link" href="#" style = 'border-bottom: 2px solid #7359f0;'>Contribute</a>
-          </li> -->
         </ul>
     </div>
   </nav>
@@ -118,15 +112,6 @@
 
     <h5><strong>2 </strong>File Name</h5>
     <p>Each sketch should be named as "Facial feature _ id(Gender + Viewing angle + Emotion + Style)", for example, "eyes_01(male + frontal + happy + cartoon).svg"</p>
-
-    <!-- <h5><strong>3 </strong>Position</h5>
-    <p>Please draw the facial feature based on the framework below. Note that the sketches in a cartoon style can have bigger eyes and smaller mouth due to cartoon exaggeration.</p>
-    <img src = 'img/data_ref.png' class = 'img_ref'>
-
-    <h5><strong>4 </strong>Expressions</h5>
-    <p>If you want to draw the facial feature with emotions, please follow this rules.</p>
-     <img src = 'img/data_emotion.png' class = 'img_ref'> -->
-
 
      <h5><strong>3 </strong>Let's See An Example: </h5>
       <img src = 'img/example.svg' class = 'img_example'>
@@ -173,30 +158,8 @@
           </li>
         </ul>
       </div>
-     <!--  <div class="col-md-2 offset-md-1 mb-5">
-        <ul class="list-unstyled list-spaced">
-          <li class="mb-2"><h6 class="text-uppercase">Product</h6></li>
-          <li class="text_footer">Features</li>
-          <li class="text_footer">Examples</li>
-          <li class="text_footer">Tour</li>
-          <li class="text_footer">Gallery</li>
-        </ul>
-      </div>
       <div class="col-md-2 mb-5">
         <ul class="list-unstyled list-spaced">
-          <li class="mb-2"><h6 class="text-uppercase">Apis</h6></li>
-          <li class="text_footer">Rich data</li>
-          <li class="text_footer">Simple data</li>
-          <li class="text_footer">Real time</li>
-          <li class="text_footer">Social</li>
-        </ul>
-      </div> -->
-      <div class="col-md-2 mb-5">
-        <ul class="list-unstyled list-spaced">
-<!--           <li class="mb-2"><h6 class="text-uppercase">Legal</h6></li>
-          <li class="text_footer">Terms</li>
-          <li class="text_footer">Legal</li>
-          <li class="text_footer">Privacy</li> -->
           <li class="text_footer"><a href='https://creativecommons.org/licenses/by/3.0/' target="view_window">License</a></li>
         </ul>
       </div>
@@ -236,21 +199,6 @@
         }
       });     
     });
-  //   $(".a-upload").on("change","input[type='file']",function(){
-  //     var filePath=$(this).val();
-  //     if(filePath.indexOf("svg")!=-1 || filePath.indexOf("zip")!=-1){
-  //         $(".fileerrorTip").html("").hide();
-  //         var arr=filePath.split('\\');
-  //         var fileName=arr[arr.length-1];
-  //         $(".showFileName").html(fileName);
-  //         $(".a-upload").text(fileName)
-  //     }else{
-  //         $(".showFileName").html("");
-
-  //         alert('Please upload svg files or zip files!');
-  //         return false 
-  //     }
-  // })
 
       $("#Continue").click(function() {
       	$('#upload_file').val("");

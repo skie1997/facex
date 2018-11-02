@@ -8,18 +8,28 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128570807-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-128570807-1');
+    </script>
+
     <title>FaceX</title>
 
     
-      <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600' rel='stylesheet' type='text/css'>
-      <link href="css/toolkit-startup.css" rel="stylesheet">
-      <link href="css/application-startup.css" rel="stylesheet">
-      <link rel = "stylesheet" type="text/css" href="css/style.css">
-      <link rel = "stylesheet" type="text/css" href="css/component.css">
-      <link rel="shortcut icon" href="img/idvx_icon.ico" />
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600' rel='stylesheet' type='text/css'>
+    <link href="css/toolkit-startup.css" rel="stylesheet">
+    <link href="css/application-startup.css" rel="stylesheet">
+    <link rel = "stylesheet" type="text/css" href="css/style.css">
+    <link rel = "stylesheet" type="text/css" href="css/component.css">
+    <link rel="shortcut icon" href="img/idvx_icon.ico" />
 
-      <!-- axios -->
-      <script language="javascript" type="text/javascript" src="js/axios.min.js"></script>
+    <!-- axios -->
+    <script language="javascript" type="text/javascript" src="js/axios.min.js"></script>
 
   
     <style>
@@ -105,12 +115,6 @@
 <div class="stage-shelf stage-shelf-right hidden" id="sidebar">
   <ul class="nav nav-bordered nav-stacked">
 
-<!--     <li class="nav-item">
-      <a class="nav-link" href ='#con_index'>Index</a>
-    </li> -->
-<!--     <li class="nav-item">
-      <a class="nav-link" href ='#con_overview' >Overview</a>
-    </li> -->
     <li class="nav-item">
       <a class="nav-link" href="https://idvxlab.github.io/">About us</a>
     </li>
@@ -118,14 +122,6 @@
     <li class="nav-item px-1 ">
       <a class="nav-link" href="/acknowledgement">Acknowledgement</a>
     </li>
-<!--     <li class="nav-item">
-      <a class="nav-link" href="/contribute">Contribute</a>
-    </li> -->
-<!--     <li class="nav-item" >
-      <a class="nav-link" href ='#con_download'>Download</a>
-    </li> -->
-    <!-- <li class="nav-divider"></li>
-    <li class="nav-header">Docs</li> -->
   </ul>
 </div>
 
@@ -136,9 +132,8 @@
   <nav class="navbar navbar-transparent navbar-fixed-top navbar-padded app-navbar">
 
     <div class="container pt-4">
-     <!--  <div class = 'topbar'> -->
         <div class = 'nav_logo'></div>
-     <!--  </div> -->
+
      <button
         class="navbar-toggler hidden-md-up float-right"
         type="button"
@@ -149,12 +144,6 @@
 
        <div class="hidden-sm-down text-uppercase">
         <ul class="navv navbar-nav float-right">
-<!--           <li class="nav-item px-1 ">
-            <a class="nav-link" id = 'navv_index'>Index</a>
-          </li> -->
-<!--           <li class="nav-item px-1 ">
-            <a class="nav-link" id = 'navv_overview'>Overview</a>
-          </li> -->
           <li class="nav-item px-1 ">
             <a class="nav-link" href="https://idvxlab.github.io/">About us</a>
           </li>
@@ -163,16 +152,8 @@
             <a class="nav-link" href="/acknowledgement">Acknowledgement</a>
           </li>
 
-          
-
-<!--           <li class="nav-item px-1 ">
-            <a class="nav-link" href="/contribute">Contribute</a>
-          </li> -->
-<!--           <li class="nav-item px-1 ">
-            <a class="nav-link" id = 'navv_download'><div class = 'download'>DOWNLOAD</div></a>
-          </li> -->
         </ul>
-      </div> <!--/.nav-collapse -->
+      </div> 
     </div>
   </nav>
 
@@ -212,7 +193,6 @@
       </div>
 
       <div class="col-md-8 offset-md-1 col-sm-12 offset-sm-0">
-          <!-- <h3>Construct the FaceX Dataset</h3> -->
           <p class="lead mb-5"><h2 style='color: #424242;'>FaceX Dataset is Drawn by a Group of Designers.</strong></h2> 
 
           <p style='margin-top:24px'>In total, the designers drew 2,205 pairs of eyebrows, 2,016 pairs of eyes, 1,806 noses, and 2,058 mouths that satisfy aesthetic criteria. We combined these hand-drawn facial features into different faces and placed these facial features according to the divine proportion of the human head.</p>
@@ -236,9 +216,6 @@
 
     <div class="row mb-5">
       <div class="col-xs-10 offset-xs-1 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3">
-         <!-- <h7 class="text-muted mb-2" style='font-weight: 300; margin-bottom: 1.5rem;'>Here is A Brief Overview of FaceX. </h7> -->
-         <!--  For More details, Please Click <a href="">Here</a> -->
-
         <h5 class="mb-4" style='color: #555555;'>FaceX has the diversity to meet the requirements from different designers.</h5>
       </div>
     </div>
@@ -328,7 +305,7 @@
     </div>
 
      <div class="row app-align-center">
-        <p style='color: #787878; text-align: left;'>Please cite the following paper before using the dataset:<br>Nan Cao, Xin Yan, Yang Shi, and Chaoran Chen. AI-Sketcher: A Deep Generative Model for Producing High Quality Sketches. IEEE AAAI 2019. <a href = '/AISketcher2019.bib'>[bib]</a></p>
+        <p style='color: #787878; text-align: left;'>Citation is given to the following publication:<br>Nan Cao, Xin Yan, Yang Shi, and Chaoran Chen. AI-Sketcher: A Deep Generative Model for Producing High Quality Sketches. AAAI 2019. <a href = '/AISketcher2019.bib'>[bib]</a></p>
 
     </div>
 
@@ -350,30 +327,10 @@
           </li>
         </ul>
       </div>
-<!--       <div class="col-md-2 offset-md-1 mb-5">
-        <ul class="list-unstyled list-spaced">
-          <li class="mb-2"><h6 class="text-uppercase">Product</h6></li>
-          <li class="text_footer">Features</li>
-          <li class="text_footer">Examples</li>
-          <li class="text_footer">Tour</li>
-          <li class="text_footer">Gallery</li>
-        </ul>
-      </div>
-      <div class="col-md-2 mb-5">
-        <ul class="list-unstyled list-spaced">
-          <li class="mb-2"><h6 class="text-uppercase">Apis</h6></li>
-          <li class="text_footer">Rich data</li>
-          <li class="text_footer">Simple data</li>
-          <li class="text_footer">Real time</li>
-          <li class="text_footer">Social</li>
-        </ul>
-      </div> -->
+
       <div class="col-md-2 mb-5">
         <ul class="list-unstyled list-spaced">
           <li class="mb-2"><h6 class="text-uppercase">Legal</h6></li>
-<!--           <li class="text_footer">Terms</li>
-          <li class="text_footer">Legal</li>
-          <li class="text_footer">Privacy</li> -->
           <li class="text_footer"><a href='https://creativecommons.org/licenses/by/3.0/' target="view_window">License</a></li>
         </ul>
       </div>
