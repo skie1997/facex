@@ -183,6 +183,20 @@ h2 {
     border:2px solid #3b28e6;
 }
 
+@media (max-width: 1260px){
+    #btn_download{
+        padding: 10px 14px;
+        font-size:14px;
+
+    }
+
+    #btn_upload{
+        padding: 10px 10px;
+        font-size:14px;
+    }
+
+}
+
 .col-sm-6 .download{
     padding: 8px 16px;
     top: 1rem;
@@ -491,16 +505,16 @@ h5 strong{
  
 
  .num_down{
-        display: flex;
-        display: flex;
+    display: flex;
     margin-top: 16px;
  }
 
   .num_down img{
-        width: 24px;
+    width: 24px;
     height: 17px;
     margin-right:16px;
 }
+
 
 
 
