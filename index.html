@@ -178,7 +178,11 @@
           <a href="/contribute"><button class="btn btn-primary btn-lg" id = 'btn_upload' >CONTRIBUTE</button></a>
           <div class = 'num_down'>
             <img src = 'img/num_download.png'>
-            <p style='left:4px; color:#555555;line-height:22px' id ='num_download'>0</p>
+            <p style='left:4px; color:#555555;line-height:22px'>svg files:</p>
+            <p style='color:#555555;line-height:22px;margin-right:32px' id ='num_svg'>0</p>
+            <img src = 'img/num_download.png'>
+            <p style='left:4px; color:#555555;line-height:22px'>npz files:</p>
+            <p style='color:#555555;line-height:22px' id ='num_npz'>0</p>
           </div>
         </div>
         
@@ -306,10 +310,15 @@
 
 
 
-<div class="block block-secondary app-iphone-block" id = 'con_download'>
-  <div class="container">
+<div class="block block-secondary app-iphone-block" style = 'margin-bottom: 48px;'>
+  <div class="container text-xs-center">
     <div class="row app-align-center">
-        <h2 style='color: #787878;'>If you use our dataset, please cite: Nan Cao, Xin Yan, Yang Shi, and Chaoran Chen. AI-Sketcher: A Deep Generative Model for Producing High Quality Sketches. <a href = '/AISketcher2019.bib'>[bib]</a></h2>
+        <div class = 'mb-4'><h2>Citation</h2></div>
+
+    </div>
+
+     <div class="row app-align-center">
+        <p style='color: #787878;'>If you use our dataset, please cite: Nan Cao, Xin Yan, Yang Shi, and Chaoran Chen. AI-Sketcher: A Deep Generative Model for Producing High Quality Sketches. <a href = '/AISketcher2019.bib'>[bib]</a></p>
 
     </div>
 
@@ -425,7 +434,8 @@
     });
 
     axios.get('https://api.facex.idvxlab.com:7000/downloader').then(function (response) {
-        $('#num_download').html(response.data);
+        $('#num_npz').html(response.data);
+        $('#num_svg').html(response.data);
     });
 
     
