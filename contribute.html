@@ -103,25 +103,35 @@
 
   <div class="block extension">
 
-    <p>We appreciate your help for extending the dataset. You can upload sketch files of different eyebrows, eyes, nose, and mouths. We will combine these hand-drawn facial features into different faces.</p>
+    <h2>Become a Contributor Today! </h2>
 
-    <h4>Please upload the file as following steps,</h4>
+    <p>Currently, everyone can contribute to the FaceX dataset by simply uploading your own hand-drawing sketches. Extraordinary contributors (submitted over 100 sketches) will be acknowledged on <a href = '/acknowledgement.html'>our website</a>. To make a contribution, please read the following instructions: </p>
 
-    <h5><strong>1 </strong>File Format</h5>
-    <p>Please save the sketch as svg file. If you want to upload more than one sketches once, we strongly suggest  you compress them as one file and then upload it.</p>
+    
 
-    <h5><strong>2 </strong>File Name</h5>
-    <p>Each sketch should be named as "Facial feature _ id(Gender + Viewing angle + Emotion + Style)", for example, "eyes_01(male + frontal + happy + cartoon).svg"</p>
+    <h5><strong>1 </strong>Sketching Facial Expressions.</h5>
+    <p>A complete set of facial expressions will contain seven fundamental types of emotions (neutral, angry, disgust, fear, happy, sad, and surprise), for both male and female, in both front and side perspective, and in all three styles (abstract, cartoon, realistic). Each expression is a combination of the sketches of two eyes, a nose, and a mouth. To sketch a facial expression, one needs to draw each of these facial elements separately as shown in the following example. </p>
+    <img src = 'img/example.svg' class = 'img_example'>
 
-     <h5><strong>3 </strong>Let's See An Example: </h5>
-      <img src = 'img/example.svg' class = 'img_example'>
-      <p>eyes_01(male + frontal + happy + cartoon).svg</p>
+    <h5><strong>2 </strong>Format</h5>
+    <p>All the sketches of the facial elements should be stored separately in a SVG file named as follows:</p>
+
+    <p>"[eyes|nose|mouth]_[male|female]_[front|side]_[neutral|angry|disgust|fear|happy|sad|surprise]_[abstract|cartoon|realistic]_ID.svg",</p>
+    <p>For example: <br>
+    "eyes_male_front_happy_cartoon_001.svg"
+    </p>
+
+    <p>Please packing into a zip file (with an arbitrary name) before uploading multiple SVG files.</p>
+
+    <h5><strong>3 </strong>Single File is Acceptable</h5>
+      
+    <p>Although sketching a complete set of facial expressions is appreciated, one still can make a contribution by just simply uploading a single SVG file of, for example, a pair of eyes or a mouth, named in the aforementioned format.</p>
 
     
     <div class= 'upload'>
 
       <div class = 'Uploading' >
-        <h5><strong>Contribute Today! </strong></h5>
+       <!--  <h5><strong>Contribute Today! </strong></h5> -->
         <form action="http://api.facex.idvxlab.com:7000/upload" method="post" enctype="multipart/form-data" id='form'>
           <!-- <a href="javascript:;" class="a-upload"> -->
              <input type="file" name="file" multiple id='upload_file'>
