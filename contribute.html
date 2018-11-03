@@ -299,6 +299,7 @@
 
       $("#Continue").click(function() {
       	$('#upload_file').val("");
+         $(".showFileName").html("Choose file...");
 
         $('.Success').css('display','none');
         $('.Uploading').css('display','block');
@@ -318,7 +319,7 @@
       }else{
           $(".showFileName").html("Choose file...");
 
-          alert('Please upload svg files or zip files!');
+          alert('Wrong format!');
           return false 
       }
   })
