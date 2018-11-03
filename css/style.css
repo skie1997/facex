@@ -211,6 +211,7 @@ h2 {
     border-radius: 2px;
     cursor: pointer;
     box-shadow: 0px 5px 10px rgba(89,66,235,.3);
+    margin-bottom: 2rem;
 }
 /*.col-sm-6 .download:hover{
     color:white;
