@@ -305,7 +305,7 @@
     </div>
 
      <div class="row app-align-center">
-        <p style='color: #787878; text-align: left;'>Citation is given to the following publication:<br>Nan Cao, Xin Yan, Yang Shi, and Chaoran Chen. AI-Sketcher: A Deep Generative Model for Producing High Quality Sketches. AAAI 2019. <a href = '/AISketcher2019.bib'>[bib]</a></p>
+        <p style='color: #787878; text-align: left;'>Citation is given to the following publication:<br>Nan Cao, Xin Yan, Yang Shi, and Chaoran Chen. AI-Sketcher: A Deep Generative Model for Producing High Quality Sketches. AAAI 2019 (accepted). <a href = '/AISketcher2019.bib'>[bib]</a></p>
 
     </div>
 
@@ -321,7 +321,7 @@
     <div class="row">
       <ul class="list-unstyled list-spaced">
         <li class="mb-2"><h6 class="text-uppercase">Legal</h6></li>
-        <li class="text_footer">The FaceX dataset is released under <a href='https://creativecommons.org/licenses/by/3.0/' target="view_window">the Creative Conmmons Attribution 3.0 Unported License</a>. Any commercial usage please contact <a href = 'mailto:idvx.lab@tongji.com'>iDV<sup>x</sup> lab</a> in advance.</li>
+        <li class="text_footer">The FaceX dataset is released under <a href='https://creativecommons.org/licenses/by/3.0/' target="view_window">the Creative Conmmons Attribution 3.0 Unported License</a> Any commercial usage please contact <a href = 'mailto:idvx.lab@tongji.com'>iDV<sup>x</sup> lab</a> in advance.</li>
       </ul>
 
     </div>
@@ -331,7 +331,7 @@
     <div class="row">
       <ul class="list-unstyled list-spaced">
         <li class="text_footer">
-           Copyright (C) <a href="https://idvxlab.com/">Intelligent Big Data Visualization Lab (iDV<sup>x</sup> Lab)</a>. All Rights Reserved.
+           Copyright (C) <a href="https://idvxlab.com/">Intelligent Big Data Visualization Lab (iDV<sup>x</sup> Lab)</a> All Rights Reserved.
         </li>
       </ul>
 
@@ -349,48 +349,15 @@
 
 
   <script type="text/javascript">
-    $(document).ready(function() {
-      $("#navv_download, #btn_download").click(function() {
-        $("html, body").animate({
-          scrollTop: $("#con_download").offset().top }, {duration: 500,easing: "swing"});
+    
+    $("#navv_download, #btn_download").click(function() {
+      $("html, body").animate({
+        scrollTop: $("#con_download").offset().top }, {duration: 500,easing: "swing"});
 
 
-          return false;
-        });
+        return false;
+      });
 
-      // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
-      if (!String.prototype.trim) {
-        (function() {
-          // Make sure we trim BOM and NBSP
-          var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
-          String.prototype.trim = function() {
-            return this.replace(rtrim, '');
-          };
-        })();
-      }
-
-      [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
-        // in case the input is already filled..
-        if( inputEl.value.trim() !== '' ) {
-          classie.add( inputEl.parentNode, 'input--filled' );
-        }
-
-        // events:
-        inputEl.addEventListener( 'focus', onInputFocus );
-        inputEl.addEventListener( 'blur', onInputBlur );
-      } );
-
-      function onInputFocus( ev ) {
-        classie.add( ev.target.parentNode, 'input--filled' );
-        $(".submission .label").css('display','none');
-      }
-
-      function onInputBlur( ev ) {
-        if( ev.target.value.trim() === '' ) {
-          classie.remove( ev.target.parentNode, 'input--filled' );
-        }
-      }
-    });
 
     axios.get('https://api.facex.idvxlab.com:7000/downloader', {
       params: {
@@ -438,7 +405,7 @@
       if(!chke.test($("#input-email").val())){
         $("#input-email").focus();
         $(".submission .label").css('display','block');
-        $(".submission .label").text('Please input the right email address!');
+        $(".submission .label").text('Wrong email address!');
       }
 
       else if (($("#input-name").val() != '')&&($("#input-com").val() != '')&&($("#input-tel").val() != '')&&($("#input-email").val() != '')&&($("#input-goal").val() != '')&&($("input[type='checkbox']").is(':checked')==true)){
@@ -466,10 +433,10 @@
 
       }else if ($("input[type='checkbox']").is(':checked')==false) {
         $(".submission .label").css('display','block');
-        $(".submission .label").text('Please read the Terms and Conditions!');
+        $(".submission .label").text('Please read the license before downloading the dataset!');
       }else{
         $(".submission .label").css('display','block');
-        $(".submission .label").text('Please fill in the form!');
+        $(".submission .label").text('Please fill out the form!');
       }
     });
 

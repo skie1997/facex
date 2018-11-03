@@ -175,7 +175,7 @@ h2 {
 }
 
 #btn_upload{
-    padding: 10px 30px;
+    padding: 8px 30px;
     -webkit-appearance: none;
     background: none;
     color: #3b28e6;
@@ -185,14 +185,27 @@ h2 {
 
 @media (max-width: 1260px){
     #btn_download{
+        padding: 10px 10px;
+        font-size: 12px;
+    }
+
+    #btn_upload{
+        padding: 8px 10px;
+        font-size:14px;
+    }
+
+}
+
+@media (max-width: 768px){
+    #btn_download{
         padding: 10px 14px;
         font-size:14px;
 
     }
 
     #btn_upload{
-        padding: 10px 10px;
-        font-size:14px;
+        padding: 8px 8px;
+        font-size: 12px;
     }
 
 }
@@ -271,13 +284,12 @@ h2 {
     display: none;
 }
 
-.submission{
+.submission,.sec_upload{
     font-size: 150%;
     padding: 48px 0;
-    max-width: 580px;
     position: relative;
     background: white;
-    box-shadow: 0px 10px 26px rgba(173,183,203,.2);
+    border:solid 2px #4242;
     text-align: center;
     left: 50%;
     -moz-transform: translateX(-50%);
@@ -287,8 +299,13 @@ h2 {
     overflow-y: scroll;
     font-family: 'Avenir';
 }
+.submission{
+    max-width: 580px;
+    box-shadow: 0px 10px 26px rgba(173,183,203,.2);
+    border:none;
+}
 
-.submission h4{
+.submission h4,.sec_upload h4{
     color: #363636;
     font-family: "Futura";
     margin: 16px 0;
@@ -311,7 +328,7 @@ h2 {
     width: calc(100% - 4em);
 }
 
-.submission .input_gender{
+.input_gender{
     display: inline-block;
     width: 40%;
     color: #9297a9;
@@ -322,7 +339,7 @@ h2 {
     position: relative;
     margin-bottom: 32px;
 }
-.submission .choose_gender{
+.choose_gender{
     font-size: 102%;
     margin-bottom: 16px;
 }
@@ -332,7 +349,7 @@ h2 {
     margin-right: 32px;
 }
 
-.submission .label{
+.submission .label,.sec_upload .label{
     /* float: left; */
     color: red;
     top: 20px;
@@ -355,7 +372,7 @@ h2 {
 }
 
 @media (max-width: 600px){
-    .submission .label{
+    .submission .label,.sec_upload .label{
         left: 4em; 
     }
 
@@ -419,7 +436,6 @@ h5 strong{
     max-width: 600px;
     min-width: 200px;
     position: relative;
-    border: solid 1px;
 }
 
 .img_ref{
@@ -477,7 +493,7 @@ h5 strong{
 
 .upload{
     position: relative;
-    border-top: solid 2px #4242;
+    /*border-top: solid 2px #4242;*/
     margin-top: 62px;
     padding: 2rem;
     text-align: center;
@@ -485,7 +501,6 @@ h5 strong{
 }
 .extension form{
     position: relative;
-    margin-top: 32px;
     width: 60%;
     border-radius: 2px;
     text-align: center;
