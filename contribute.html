@@ -175,9 +175,9 @@
           <div class = 'Uploading' >
            <!--  <h5><strong>Contribute Today! </strong></h5> -->
             <form action="http://api.facex.idvxlab.com:7000/upload" method="post" enctype="multipart/form-data" id='form'>
-              <!-- <a href="javascript:;" class="a-upload"> -->
-                 <input type="file" name="file" multiple id='upload_file'>
-             <!--  </a> -->
+              <a href="javascript:;" class="a-upload"><div class ='showFileName'>Choose file...</div>
+                 <input class = 'rel_up' type="file" name="file" multiple id='upload_file'>
+              </a>
               <input type="submit" value="Upload">
             </form>
           </div>
@@ -256,9 +256,19 @@
         return false;  
       }
 
-      else if (($("#input-name").val() != '')&&($("#input-com").val() != '')&&($("#input-tel").val() != '')&&($("#input-email").val() != '')&&($("input[type='checkbox']").is(':checked')==true)){
+      else if (($("#input-name").val() != '')&&($("#input-com").val() != '')&&($("#input-email").val() != '')&&($("input[type='checkbox']").is(':checked')==true)){
 
-        console.log('upload')
+        axios.post('https://api.facex.idvxlab.com:7000/download', {
+          'file':'',
+          'name': $("#input-name").val(),
+          'company': $("#input-com").val(),
+          'tel': $("#input-tel").val(),
+          'email': $("#input-email").val(),
+          'goal':''
+        }).then(function (response) {
+          console.log('success');
+          });
+
         // return false; 
       }else if ($("input[type='checkbox']").is(':checked')==false) {
         alert("Please read the license before uploading!");
@@ -291,6 +301,24 @@
 
 
       });
+
+
+    $(".a-upload").on("change","input[type='file']",function(){
+      var filePath=$(this).val();
+      if(filePath.indexOf("svg")!=-1 || filePath.indexOf("zip")!=-1){
+          $(".fileerrorTip").html("").hide();
+          var arr=filePath.split('\\');
+          var fileName=arr[arr.length-1];
+          $(".showFileName").html(fileName);
+          // $(".a-upload").text(fileName)
+      }else{
+          $(".showFileName").html("Choose file...");
+
+          alert('Please upload svg files or zip files!');
+          return false 
+      }
+  })
+
 
     </script>
 

@@ -474,10 +474,12 @@ h5 strong{
     overflow: hidden;
     display: inline-block;
     margin-right: 16px;
-    display: inline;
+    display: inline-flex;
+    /* font-size: 1.2rem; */
+    height: 40px;
 }
 
-.a-upload  input {
+.rel_up {
     position: absolute;
     font-size: 100px;
     right: 0;
