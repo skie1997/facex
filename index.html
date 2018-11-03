@@ -165,7 +165,7 @@
         <div class = 'text'>
           <h2 class="block-titleData frequency">A Dataset Containing 5,240,088 Hand-Drawing Sketches</h1>
           <p class="lead mb-4 text-muted">The dataset contains over 5 million labeled facial sketches categorized by genders (male, female), viewing angles (frontal, mid-profile left, mid-profile right view), emotions (neutral, happy, sad, angry, fearful, surprised, disgusted), and artistic styles (realistic, cartoon, abstract styles).</p>
-          <button class="btn btn-primary btn-lg" id = 'btn_download'>DOWNLOAD</button>
+          <a href="#con_download"><button class="btn btn-primary btn-lg" id = 'btn_download'>DOWNLOAD</button></a>
           <a href="/contribute"><button class="btn btn-primary btn-lg" id = 'btn_upload' >CONTRIBUTE</button></a>
           <div class = 'num_down'>
             <img src = 'img/num_download.png'>
@@ -350,20 +350,11 @@
 
   <script type="text/javascript">
     $(document).ready(function() {
-      $("#navv_index").click(function() {
-      $("html, body").animate({
-        scrollTop: $("#con_index").offset().top }, {duration: 500,easing: "swing"});
-        return false;
-      });
-      $("#navv_overview").click(function() {
-        $("html, body").animate({
-          scrollTop: $("#con_overview").offset().top }, {duration: 500,easing: "swing"});
-          return false;
-      });
-
       $("#navv_download, #btn_download").click(function() {
         $("html, body").animate({
           scrollTop: $("#con_download").offset().top }, {duration: 500,easing: "swing"});
+
+
           return false;
         });
 
