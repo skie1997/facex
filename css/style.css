@@ -305,6 +305,9 @@ h2 {
     border:none;
 }
 
+.sec_upload{
+    max-width: 1200px;
+}
 .submission h4,.sec_upload h4{
     color: #363636;
     font-family: "Futura";
