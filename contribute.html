@@ -105,18 +105,18 @@
 
     <h2>Become a Contributor Today! </h2>
 
-    <p>Currently, everyone can contribute to the FaceX dataset by simply uploading your own hand-drawing sketches. Extraordinary contributors (submitted over 100 sketches) will be acknowledged on <a href = '/acknowledgement.html'>our website</a>. To make a contribution, please read the following instructions: </p>
+    <p>Currently, everyone can contribute to the FaceX dataset by simply uploading your own hand-drawing sketches. Extraordinary contributors (submitted over 100 sketches) will be <a href = '/acknowledgement.html'>acknowledged on our website</a>. To make a contribution, please read the following instructions: </p>
 
     
 
-    <h5><strong>1 </strong>Sketching Facial Expressions.</h5>
-    <p>A complete set of facial expressions will contain seven fundamental types of emotions (neutral, angry, disgust, fear, happy, sad, and surprise), for both male and female, in both front and side perspective, and in all three styles (abstract, cartoon, realistic). Each expression is a combination of the sketches of two eyes, a nose, and a mouth. To sketch a facial expression, one needs to draw each of these facial elements separately as shown in the following example. </p>
+    <h5><strong>1 </strong>Sketching Facial Expressions</h5>
+    <p>A complete set of facial expressions will contain seven fundamental types of emotions (neutral, angry, disgust, fear, happy, sad, and surprise), for both male and female, in both front and side perspective, and in all three styles (abstract, cartoon, realistic). Each expression is a combination of the sketches of two eyebrows & eyes, a nose, and a mouth. To sketch a facial expression, one needs to draw each of these facial elements separately as shown in the following example. </p>
     <img src = 'img/example.svg' class = 'img_example'>
 
     <h5><strong>2 </strong>Format</h5>
     <p>All the sketches of the facial elements should be stored separately in a SVG file named as follows:</p>
 
-    <p>"[eyes|nose|mouth]_[male|female]_[front|side]_[neutral|angry|disgust|fear|happy|sad|surprise]_[abstract|cartoon|realistic]_ID.svg",</p>
+    <p>"[eyebrows|eyes|nose|mouth]_[male|female]_[front|side]_[neutral|angry|disgust|fear|happy|sad|surprise]_[abstract|cartoon|realistic]_ID.svg",</p>
     <p>For example: <br>
     "eyes_male_front_happy_cartoon_001.svg"
     </p>
@@ -128,25 +128,74 @@
     <p>Although sketching a complete set of facial expressions is appreciated, one still can make a contribution by just simply uploading a single SVG file of, for example, a pair of eyes or a mouth, named in the aforementioned format.</p>
 
     
-    <div class= 'upload'>
-
-      <div class = 'Uploading' >
-       <!--  <h5><strong>Contribute Today! </strong></h5> -->
-        <form action="http://api.facex.idvxlab.com:7000/upload" method="post" enctype="multipart/form-data" id='form'>
-          <!-- <a href="javascript:;" class="a-upload"> -->
-             <input type="file" name="file" multiple id='upload_file'>
-         <!--  </a> -->
-          <input type="submit" value="Upload">
-        </form>
-      </div>
-
-      <div class = 'Success' style='display: none'>
-        <h5><strong>Upload complete! </strong></h5>
-
-        <p style = 'margin-top: 32px;color:#2595FF;' id = 'Continue'>Continue to upload</p>
+    <div class= 'upload'>   
+        <section class="sec_upload">
 
 
-      </div>
+          <span class="input input--hoshi"> 
+            <input class="input__field input__field--hoshi" type="text" id="input-name"/>
+            <label class="input__label input__label--hoshi input__label--hoshi-color-1" for="input-name">
+              <span class="input__label-content input__label-content--hoshi">* Name.</span>
+            </label>
+          </span>
+
+          <span class="input input--hoshi">
+            <input class="input__field input__field--hoshi" type="text" id="input-com" />
+            <label class="input__label input__label--hoshi input__label--hoshi-color-2" for="input-com">
+              <span class="input__label-content input__label-content--hoshi">* Affiliation.</span>
+            </label>
+          </span>
+
+
+          <span class="input input--hoshi">
+            <input class="input__field input__field--hoshi" type="text" id="input-tel" />
+            <label class="input__label input__label--hoshi input__label--hoshi-color-2" for="input-tel">
+              <span class="input__label-content input__label-content--hoshi">Tel.</span>
+            </label>
+          </span>
+          <span class="input input--hoshi">
+            <input class="input__field input__field--hoshi" type="text" id="input-email" />
+            <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="input-email">
+              <span class="input__label-content input__label-content--hoshi">* Email</span>
+            </label>
+          </span>
+
+          <!--  <span class="input_my" style= 'max-width: 800px;'>
+              <label for="l_ok" class="radio">
+                  <span class="radio-bg"></span>
+                    <input type="checkbox" name="liscence" id="l_ok" checked='checked'/>
+                  <span class="radio-on"></span>
+              </label>
+              The FaceX dataset is released under <a href='https://creativecommons.org/licenses/by/3.0/' target="view_window">the Creative Conmmons Attribution 3.0 Unported License</a>. Any commercial usage please contact<a href = 'mailto:idvx.lab@tongji.com'> iDV<sup>x</sup> lab</a> in advance.
+          </span> -->
+
+
+
+
+          <div class = 'Uploading' >
+           <!--  <h5><strong>Contribute Today! </strong></h5> -->
+            <form action="http://api.facex.idvxlab.com:7000/upload" method="post" enctype="multipart/form-data" id='form'>
+              <!-- <a href="javascript:;" class="a-upload"> -->
+                 <input type="file" name="file" multiple id='upload_file'>
+             <!--  </a> -->
+              <input type="submit" value="Upload">
+            </form>
+          </div>
+
+          <div class = 'Success' style='display: none'>
+            <h5><strong>Success! </strong></h5>
+
+            <p style = 'margin-top: 32px;color:#2595FF;' id = 'Continue'>Continue to upload</p>
+
+
+          </div>
+          
+
+
+          
+        </section>
+
+
 
 
     </div>
@@ -173,7 +222,7 @@
     <div class="row">
       <ul class="list-unstyled list-spaced">
         <li class="text_footer">
-           Copyright (C) <a href="https://idvxlab.com/">Intelligent Big Data Visualization Lab (iDV<sup>x</sup> Lab)</a>. All Rights Reserved.
+           Copyright (C) <a href="https://idvxlab.com/">Intelligent Big Data Visualization Lab (iDV<sup>x</sup> Lab)</a> All Rights Reserved.
         </li>
       </ul>
 
@@ -197,6 +246,27 @@
         alert("Please choose a file！！！");
         return false;  
       }  
+
+
+      var chke = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$");
+
+      if(!chke.test($("#input-email").val())){
+        $("#input-email").focus();
+        alert("Wrong email address!");
+        return false;  
+      }
+
+      else if (($("#input-name").val() != '')&&($("#input-com").val() != '')&&($("#input-tel").val() != '')&&($("#input-email").val() != '')&&($("input[type='checkbox']").is(':checked')==true)){
+
+        console.log('upload')
+        // return false; 
+      }else if ($("input[type='checkbox']").is(':checked')==false) {
+        alert("Please read the license before uploading!");
+        return false; 
+      }else{
+        alert("Please fill out the form!");
+        return false; 
+      }
     });
 
     $(function(){
