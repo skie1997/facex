@@ -27,6 +27,10 @@
     <link rel = "stylesheet" type="text/css" href="css/component.css">
     <link rel="shortcut icon" href="img/idvx_icon.ico" />   
 
+      <!-- axios -->
+    <script language="javascript" type="text/javascript" src="js/axios.min.js"></script>
+
+
     <style>
       /* note: this is a hack for ios iframe for bootstrap themes shopify page */
       /* this chunk of css is not part of the toolkit :) */
@@ -166,7 +170,7 @@
                     <input type="checkbox" name="liscence" id="l_ok" checked='checked'/>
                   <span class="radio-on"></span>
               </label>
-              I agree to the <a href='/agreement.html'>Terms and Conditions</a>.
+              I agree to the <a href='/agreement.html' target="view_window">Terms and Conditions</a>.
           </span>
 
 
@@ -174,7 +178,7 @@
 
           <div class = 'Uploading' >
            <!--  <h5><strong>Contribute Today! </strong></h5> -->
-            <form action="http://api.facex.idvxlab.com:7000/upload" method="post" enctype="multipart/form-data" id='form'>
+            <form action="https://api.facex.idvxlab.com:7000/upload" method="post" enctype="multipart/form-data" id='form'>
               <a href="javascript:;" class="a-upload"><div class ='showFileName'>Choose file...</div>
                  <input class = 'rel_up' type="file" name="file" multiple id='upload_file'>
               </a>
@@ -266,7 +270,7 @@
           'email': $("#input-email").val(),
           'goal':''
         }).then(function (response) {
-          console.log('success');
+            console.log('success');
           });
 
         // return false; 
@@ -279,7 +283,7 @@
       }
     });
 
-    $(function(){
+    // $(function(){
       /** 验证文件是否导入成功  */
       $("#form").ajaxForm(function(data){  
         // alert(data);
@@ -291,7 +295,7 @@
         	alert('Upload fail! Please try again.')
         }
       });     
-    });
+    // });
 
       $("#Continue").click(function() {
       	$('#upload_file').val("");
@@ -305,7 +309,7 @@
 
     $(".a-upload").on("change","input[type='file']",function(){
       var filePath=$(this).val();
-      if(filePath.indexOf("svg")!=-1 || filePath.indexOf("zip")!=-1){
+      if(filePath.indexOf("svg")!=-1 || filePath.indexOf("zip")!=-1 || filePath.indexOf("rar")!=-1|| filePath.indexOf("7z")!=-1){
           $(".fileerrorTip").html("").hide();
           var arr=filePath.split('\\');
           var fileName=arr[arr.length-1];
