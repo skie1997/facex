@@ -440,11 +440,8 @@
 
         axios.post('https://api.facex.idvxlab.com:7000/download', {
           'file' : download_file,
-          'name': 'none',
           'company': $("#input-com").val(),
-          'tel': 'none',
           'email': $("#input-email").val(),
-          'goal': 'none'
         }).then(function (response) {
             download_url = 'https://api.facex.idvxlab.com:7000'+response.data;
             const oA = document.createElement('a');
