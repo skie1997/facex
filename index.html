@@ -69,23 +69,10 @@
         </label>
       </span>
 
-
-      <span class="input input--hoshi">
-        <input class="input__field input__field--hoshi" type="text" id="input-tel" />
-        <label class="input__label input__label--hoshi input__label--hoshi-color-2" for="input-tel">
-          <span class="input__label-content input__label-content--hoshi">Tel</span>
-        </label>
-      </span>
       <span class="input input--hoshi">
         <input class="input__field input__field--hoshi" type="text" id="input-email" />
         <label class="input__label input__label--hoshi input__label--hoshi-color-3" for="input-email">
           <span class="input__label-content input__label-content--hoshi">* Email</span>
-        </label>
-      </span>
-      <span class="input input--hoshi">
-        <input class="input__field input__field--hoshi" type="text" id="input-goal" />
-        <label class="input__label input__label--hoshi input__label--hoshi-color-4" for="input-goal">
-          <span class="input__label-content input__label-content--hoshi">* Purpose</span>
         </label>
       </span>
 
@@ -455,9 +442,9 @@
           'file' : download_file,
           'name': 'none',
           'company': $("#input-com").val(),
-          'tel': $("#input-tel").val(),
+          'tel': 'none',
           'email': $("#input-email").val(),
-          'goal': $("#input-goal").val()
+          'goal': 'none'
         }).then(function (response) {
             download_url = 'https://api.facex.idvxlab.com:7000'+response.data;
             const oA = document.createElement('a');
