@@ -63,6 +63,13 @@
       <h4>DOWNLOAD</h4>
 
       <span class="input input--hoshi">
+        <input class="input__field input__field--hoshi" type="text" id="input-pur" />
+        <label class="input__label input__label--hoshi input__label--hoshi-color-2" for="input-pur">
+          <span class="input__label-content input__label-content--hoshi">* Purpose</span>
+        </label>
+      </span>
+
+      <span class="input input--hoshi">
         <input class="input__field input__field--hoshi" type="text" id="input-com" />
         <label class="input__label input__label--hoshi input__label--hoshi-color-2" for="input-com">
           <span class="input__label-content input__label-content--hoshi">* Organization</span>
@@ -440,6 +447,7 @@
 
         axios.post('https://api.facex.idvxlab.com:7000/download', {
           'file' : download_file,
+          'goal': $("#input-pur").val(),
           'company': $("#input-com").val(),
           'email': $("#input-email").val(),
         }).then(function (response) {
