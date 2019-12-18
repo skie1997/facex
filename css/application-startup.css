@@ -157,7 +157,7 @@
 /* ie10+ */
 @media (min-width: 768px) {
   .app-align-center {
-    display: flex;
+/*    display: flex;*/
     align-items: center;
   }
 }
