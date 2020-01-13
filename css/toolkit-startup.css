@@ -916,7 +916,7 @@ pre {
     width: 50%; }
   .col-sm-7 {
     float: left;
-    width: 58.33333%; }
+    width: 50%; }
   .col-sm-8 {
     float: left;
     width: 66.66667%; }
@@ -1030,10 +1030,10 @@ pre {
     width: 50%; }
   .col-md-7 {
     float: left;
-    width: 58.33333%; }
+    width: 50%; }
   .col-md-8 {
-    float: left;
-    width: 66.66667%; }
+    float: right;
+    width: 50%; }
   .col-md-9 {
     float: left;
     width: 75%; }
@@ -1101,7 +1101,7 @@ pre {
   .offset-md-0 {
     margin-left: 0%; }
   .offset-md-1 {
-    margin-left: 8.33333%; }
+    margin-left: 0; }
   .offset-md-2 {
     margin-left: 16.66667%; }
   .offset-md-3 {
@@ -7877,7 +7877,7 @@ h1.block-title {
 
 @media (min-width: 576px) {
   .block {
-      padding: 100px 1rem 0px 1rem; }
+      padding: 0px 1rem 0px 1rem; }
     .block:not(.block-secondary) .lead {
       font-size: 18px; } }
 
