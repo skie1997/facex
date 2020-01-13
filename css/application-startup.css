@@ -87,7 +87,7 @@
 
 /* marketing grid block */
 .app-block-marketing-grid .container {
-  margin-bottom: -60px;
+  margin-bottom: 0px;
 }
 .app-marketing-grid .m-b {
   margin-bottom: 10px !important;
