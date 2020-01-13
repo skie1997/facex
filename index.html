@@ -116,7 +116,7 @@
 
 <div class="stage" id="stage">
 
-<div class="block block-inverse block-fill-height app-header" style="background: white; padding: 100px 1rem;" id = 'con_index'>
+<div class="block block-inverse block-fill-height app-header" style="background: white; padding: 100px 1rem 0px 1rem;" id = 'con_index'>
 
   <nav class="navbar navbar-transparent navbar-fixed-top navbar-padded app-navbar">
 
@@ -254,7 +254,7 @@
 
 
 
-      <div class="col-md-6 offset-md-1 col-sm-12 offset-sm-0" style = 'margin-left: 0'>
+      <div class="col-md-6 offset-md-1 col-sm-12 offset-sm-0" style = 'margin-left: 0;margin-top: 15px;'>
  <!--        <h6 class="text-muted text-uppercase">Download FaceX</h6> -->
         <h3>Download the FaceX Dataset</h3>
         <p class="lead mb-4">We provide two data formats of FaceX.</p>
@@ -273,7 +273,7 @@
       </div>
 
       <div class="col-sm-5 hidden-sm-down">
-        <img class="app-iphone" src="img/data_download.svg" style="width: 100%;margin-left: 8%;">
+        <img class="app-iphone" src="img/data_download.svg" style="width: 100%;margin-left: 8%;margin-top: -30%;">
       </div>
 
     </div>
@@ -293,13 +293,29 @@
     <div class="row mb-5">
      	<h3>Citation</h3>
        	<!-- <p style='color: #787878; text-align: left;'>Citation is given to the following publication:<br>Nan Cao, Xin Yan, Yang Shi, and Chaoran Chen. AI-Sketcher: A Deep Generative Model for Producing High Quality Sketches. AAAI 2019 (accepted). </p> -->
-          <p style='color: #787878; text-align: left;'>Citation is given to the following publication:<br>Yang Shi, Nan Cao, Xiaojuan Ma, Siji Chen and Pei Liu. EmoG: Supporting the Sketching of Emotional Expressions for Storyboarding. Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems(accepted). </p>
+          <p style='color: #787878; text-align: left;'>Citation is given to the following publication:
+            <ul style='color: #787878; text-align: left;'>
+              <li>Yang Shi, Nan Cao, Xiaojuan Ma, Siji Chen and Pei Liu. EmoG: Supporting the Sketching of Emotional Expressions for Storyboarding. Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems(accepted). </li>
+              <li>Nan Cao, Xin Yan, Yang Shi, Chaoran Chen. AI-Sketcher: A Deep Generative Model for Generating High Quality Sketches. AAAI 2019. </li>
+            </ul>
+          </p>
     </div>
     <div class="row app-align-center">
 
       <!-- <div class="col-md-7 offset-md-1 col-sm-12 offset-sm-0" style = 'margin-left: 0'> -->
+        <div class="row citation pane">
+          <p>@InProceedings{
+                shi2020emog,
+                author = "Yang Shi, Nan Cao, Xiaojuan, Ma, Siji Chen and Pei Liu",
+                title =  "EmoG: Supporting the Sketching of Emotional Expressions for Storyboarding",
+                year = "2020",
+                booktitle={Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems}
+              }
+      </p>  
+
+        </div> 
         
-        <div class="row citation">
+        <div class="row citation pane">
          	<p>@InProceedings{
          	cao2019aisketcher,
          	author = "Nan Cao, Xin Yan, Yang Shi, and Chaoran Chen",
@@ -311,17 +327,7 @@
       
         </div>
 
-        <div class="row citation">
-          <p>@InProceedings{
-                shi2020emog,
-                author = "Yang Shi, Nan Cao, Xiaojuan, Ma, Siji Chen and Pei Liu",
-                title =  "EmoG: Supporting the Sketching of Emotional Expressions for Storyboarding",
-                year = "2020",
-                booktitle={Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems}
-              }
-      </p>  
-
-        </div> 
+        
       <!-- </div> -->
 
 <!--       <div class="col-sm-5">
